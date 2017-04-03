@@ -1,0 +1,29 @@
+<section class="content content_tovar-padding">
+	<h1 class="h1 content__header_tovar-margin">{{store.dataProduct.name}}</h1>
+	<div class="block-image-tovar clearfix">
+		<img class="image-tovar__image" ng-src={{store.dataProduct.image}} alt="phone">
+		<a href="cart_1.html" class="button-in-basket">В корзину</a>
+	</div>
+	<div class="clearfix"></div>
+	<ul class="content__card-info">
+		<li ng-class="{'content__card-info-item_active': store.tab===1}" ng-click="store.setTab(1)">
+			<a href>Дата</a>
+		</li>
+		<li ng-class="{'content__card-info-item_active': store.tab===2}" ng-click="store.setTab(2)">
+			<a href>Описание</a>
+		</li>
+		<li ng-class="{'content__card-info-item_active': store.tab===3}" ng-click="store.setTab(3)">
+			<a href>Цена</a>
+		</li>
+	</ul>
+	<div class="panel" ng-show="store.isSelect(1)">
+		<div class="date">{{store.dataProduct.date}}</div>
+	</div>
+	<div class="panel" ng-show="store.isSelect(2)">
+		<div class="description">{{store.dataProduct.description}}</div>
+	</div>
+	<div class="panel" ng-show="store.isSelect(3)">
+		<div class="price">{{store.dataProduct.price}}</div>
+	</div>
+	<a class="button-to-table" href ng-click="store.pageCardProduct('default',product)">К списку товаров</a>	
+</section>
