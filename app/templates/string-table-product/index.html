@@ -1,0 +1,13 @@
+	<td class="table-tovar__cell">
+		<img class="table-tovar__image" ng-src={{product.image}} alt="phone">
+	</td>
+	<td class="table-tovar__cell">
+		<a href="#" ng-href="#!/card/{{product.id}}" ng-click="store.pageCardProduct('card-product',product)">{{product.name}}</a>
+		<time datetime="2016-09-09" class="table-tovar__time">{{product.date}}</time>
+	</td>
+	<td class="table-tovar__cell">
+		{{product.description}}
+	</td>
+	<td class="table-tovar__cell">
+		{{product.price}}
+	</td>

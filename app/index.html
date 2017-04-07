@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="store">
+	<head>
+		<title>КАТАЛОГ - АРЕНДА СЕЙФОВ</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<script type="text/javascript" src="./js/vender/angular.min.js"></script>
+		<script type="text/javascript" src="./js/app.js"></script>
+		<script type="text/javascript" src="./js/store_directives.js"></script>
+		<script type="text/javascript" src="./js/vender/angular-route.min.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<article class="header__insert">
+				<a href="index.html">
+					<img class="logo" src="images/logo.svg" alt="logotip">
+				</a>
+				<nav >
+					<ul class="nav-menu">
+						<li class="nav-menu__item">
+							<a href="index.html">ГЛАВНАЯ</a>
+						</li>
+						<li class="nav-menu__item nav-menu__item_active">
+							<a href="#">КАТАЛОГ ПРИЛОЖЕНИЙ</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#">О КОМПАНИИ</a>
+						</li>
+					</ul>
+				</nav>
+			</article>
+		</header>
+		<div class="wrapper-categories-tovar clearfix" ng-controller="StoreController as store">
+			<aside class="product-applications">
+				<h2 class="product-applications__header">Каталог приложений</h2>
+				<nav>
+					<ul class="product-applications__menu">
+						<li class="product-applications__list-item" ng-repeat="product in store.products">
+							<a class="product-applications__link" href ng-href="/#!/card/{{product.id}}" ng-click="store.pageCardProduct('card-product',product)">{{product.name}}</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+			<section class="content content_tovar-padding"  ng-view>
+			</section>
+		</div>
+	</body>
+</html>
